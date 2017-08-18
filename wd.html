@@ -1,0 +1,355 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/mui.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/image.viewer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/wd.css"/>
+		
+		<style type="text/css">
+			.centet img{
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+			}
+			.sd-a img{
+				width: 100px;
+				height: 100px;
+				margin: 15px auto;
+				display: block;
+				border-radius: 100%;
+			}
+			.sd-a button{
+				width: 60%;
+				margin: 10px auto;
+				display: block;
+				border: 0px;
+				background: red;
+				color: #fff;
+				font-size: 13px;
+				padding: 10px 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--mheader  按下回车键-->
+		<!--<header class="mui-bar mui-bar-nav public-color">
+		    <h1 class="mui-title">商店</h1>
+		</header>-->
+		<!--mbody  按下回车键-->
+		<!--<div class="mui-content">
+		    商店
+		</div>-->
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+			<!--侧滑菜单部分-->
+			<aside id="offCanvasSide" class="mui-off-canvas-left">
+				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						
+						<div class="sd-a">
+							<img class="max-img" src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=a52f8c93211f95cab9f595b6f9167fc5/83025aafa40f4bfbc9c817b9074f78f0f63618c6.jpg"/>
+							<button class="changImg" onclick="plusReady()">更改头像</button>
+						</div>
+						<ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
+							<li class="mui-table-view-cell" id="c1">
+								<a class="mui-navigate-right">
+								<span class="mui-icon mui-icon-person"></span>	回到我的
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+								<span class="mui-icon-extra mui-icon-extra-sweep"></span>	扫一扫
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+								<span class="mui-icon mui-icon-person"></span>	摇一摇
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+								<span class="mui-icon-extra mui-icon-extra-gold"></span>  <span>0</span>&nbsp;&nbsp;个约币
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+								<span class="mui-icon mui-icon-location"></span>	同城服务
+								</a>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">
+								<span class="mui-icon mui-icon-pengyouquan"></span>	反馈问题
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</aside>
+			<!--主界面部分-->
+			<div class="mui-inner-wrap">
+				<header class="mui-bar mui-bar-nav public-color">
+					<a href="#" class="mui-icon mui-pull-left centet">
+						<img class="min-img" src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=a52f8c93211f95cab9f595b6f9167fc5/83025aafa40f4bfbc9c817b9074f78f0f63618c6.jpg"  id="img">
+					</a>
+					<h1 class="mui-title">我的</h1>
+				</header>
+				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+							<!--这里放置真实显示的DOM内容-->
+							<div class="mui-content">
+								<div class="user-img-o mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+									<div class="mui-scroll mui-content-padded user-img-more" id="user-img-more">
+								        <a class="mui-control-item">
+								           <img class="user-II-more"  src="img/user/4.jpg" data-preview-src="" data-preview-group="1" />
+								        </a>
+								        <a class="mui-control-item">
+								      		<img class="user-II-more"  src="img/user/5.jpg" data-preview-src="" data-preview-group="1" />
+								        </a>
+								        <a class="mui-control-item">
+								           <img class="user-II-more"  src="img/user/5.jpg" data-preview-src="" data-preview-group="1" />
+								        </a>
+								        <a class="mui-control-item">
+								            <img class="user-II-more"  src="img/user/5.jpg" data-preview-src="" data-preview-group="1" />
+								        </a>
+								        <a class="mui-control-item">
+								            <img class="user-II-more"  src="img/user/5.jpg" data-preview-src="" data-preview-group="1" />
+								        </a>
+								    </div>
+								    <div class="input-img-more">
+								    	 <a class="mui-control-item mui-active">
+								          	<button class="input-img" id="input-img">+</button>
+								        </a>
+								    </div>
+								</div>
+								
+							    <ul class="mui-table-view">
+						            <li class="mui-table-view-cell">
+						                <a class="mui-navigate-right">
+						                   	<span class="mui-icon mui-icon-email"></span>   我的资料
+						                </a>
+						            </li>
+						            <li class="mui-table-view-cell">
+						                <a class="mui-navigate-right">
+						                    <span class="mui-icon mui-icon-chatboxes"></span>   和谁聊天
+						                </a>
+						            </li>
+						             <li class="mui-table-view-cell">
+						                <a class="mui-navigate-right">
+						                    <span class="mui-icon mui-icon-email"></span>   社区撩妹
+						                </a>
+						            </li>
+							    </ul>
+							    <ul class="mui-table-view">
+							            <li class="mui-table-view-cell">
+							                <a class="mui-navigate-right">
+							                    <span class="mui-icon mui-icon-map"></span>   寻找缘分
+							                </a>
+							            </li>
+							            <li class="mui-table-view-cell">
+							                <a class="mui-navigate-right">
+							                    <span class="mui-icon mui-icon-locked"></span>   找回密码
+							                </a>
+							            </li>
+							            <li class="mui-table-view-cell">
+							                <a class="mui-navigate-right">
+							                    <span class="mui-icon mui-icon-compose"></span>   意见反馈
+							                </a>
+							            </li>
+							             <li class="mui-table-view-cell">
+							                <a class="mui-navigate-right">
+							                    <span class="mui-icon mui-icon-eye"></span>   使用（本软件）协议
+							                </a>
+							            </li>
+							            <li class="mui-table-view-cell">
+							                <a href="models/login/login.html" class="mui-navigate-right">
+							                    <span class="mui-icon mui-icon-arrowthinleft"></span>   退出登录
+							                </a>
+							            </li>
+							       </ul>
+							</div>
+					</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="js/castapp.js" ></script>
+		<script src="js/mui.zoom.js"></script>
+		<script src="js/mui.previewimage.js"></script>
+		<script type="text/javascript">
+		
+			mui('.mui-scroll-wrapper').scroll({
+				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+			});
+			ca.init();
+			//预览图片
+			ca.imageViewer();
+			
+			//选择上传更多图片start
+						
+						/**
+			 * actionSheet
+			 * 
+			 * arr里面的title为要弹出的选项内容 
+			 *
+			 * 参数为json
+			 * 
+			 * succFn 成功回调 
+			 * 
+			 * errFn  失败回调
+			 * 
+ */
+ 			var oIpImg = ca.id('input-img');
+ 			var aUserIMore = ca.id('user-img-more');
+			
+			ca.click(oIpImg,function(){
+				var arr = ['照相机','相册'];
+				castapp.actionSheet(arr,{
+					succFn:function(data){
+					        //手机上的图片路径
+						//alert(data);
+						//上传后的图片路径
+					//	console.log('http://peipao.dongyixueyuan.com/'+data);
+						
+						 
+						var I = '<a class="mui-control-item"><img class="user-II-more"  src='+data+'  data-preview-src="" data-preview-group="1" /></a>';
+						aUserIMore.innerHTML += I;
+						//提示框
+						castapp.prompt('成功上传了一张图片');
+					},
+					errFn:function(data){
+						castapp.prompt('上传失败了');
+					},
+					//是否开启上传
+					isUpload:false,
+					//上传地址
+					//uploadUrl:'http://peipao.dongyixueyuan.com/upload_file.php',
+					
+				})
+			});
+			
+			//选择上传更多图片end
+			
+			var kai = ['img'];
+			var guan = ['c1'];
+			
+			// 3种滑动方式 main-move 主界面移动 menu-move 菜单移动  main-move-scalable 仿QQ聊天缩放
+			
+			ca.sideslipNav(' main-move',kai,guan);	
+			
+			
+			/*
+			 * 相册
+			 * 
+			 * 参数为json
+			 * 
+			 * succFn 成功回调 返回值 = 图片路径
+			 * 
+			 * errFn 失败回调 返回值 =  错误信息
+			 * 
+			 
+			
+			castapp.album({
+				succFn:function(path){
+				    alert(path);
+				},
+				errFn:function(error){
+				    alert(error);
+				}
+			});
+			*/
+			
+			// 扩展API加载完毕后调用onPlusReady回调函数 
+			document.addEventListener( "plusready", onPlusReady, false );
+			// 扩展API加载完毕，现在可以正常调用扩展API 
+			function onPlusReady() {
+			}
+			// 从相册中选择图片 
+			function galleryImg() {
+				// 从相册中选择图片
+				var maxImg=ca.className('max-img')[0];
+				var minImg=ca.className('min-img')[0];
+				//console.log("从相册中选择图片:");
+			    plus.gallery.pick( function(path){
+			    	//console.log(path);
+			    	maxImg.src=path;
+			    	minImg.src=path;
+			    }, function ( e ) {
+			    	castapp.prompt('取消选择图片');
+			    }, {filter:"image"} );
+			}
+			
+	// H5 plus事件处理
+	function plusReady(){
+		// 弹出系统选择按钮框
+		plus.nativeUI.actionSheet( {title:"选择上传方式",cancel:"取消",buttons:[{title:"从相册中选择图片"},{title:"拍照"}]}, function(e){
+			console.log( "User pressed: "+e.index );
+			if (e.index==1) {
+				galleryImg();
+			} else if(e.index==2){
+				/**
+				 * 照相机
+				 * 
+				 * 参数 json
+				 * 
+				 * succFn 成功回调 path = 图片路径 name = 图片名称
+				 * 
+				 * errFn 失败回调 error = 错误信息
+				 * 
+				 */
+				
+				castapp.camera({
+					succFn:function(path,name){
+					    alert(path); // 图片路径
+					    alert(name); // 图片名称
+					    var maxImg=ca.className('max-img')[0];
+						var minImg=ca.className('min-img')[0];
+						maxImg.src=path;
+			    		minImg.src=path;
+					},
+					errFn:function(error){
+					    mui.toast(取消了);
+					}
+				});
+			}
+		} );
+	}
+//	if(window.plus){
+//		plusReady();
+//	}else{
+//		document.addEventListener("plusready",plusReady,false);
+//	}
+						
+			/*
+			 * castapp.getCurrentPosition({
+				succFn:function(data){
+					alert(data);
+				},
+				errFn:function(error){
+					alert(error);
+				}
+			});
+			 * 获得当前地理位置
+			 * 
+			 * 参数 json
+			 * 
+			 * succFn 成功回调 data 为位置信息
+			 * errFn  失败回调 error 为错误信息
+			 * 
+			 */
+			var btn1=ca.id('btn1');
+			ca.click(btn1,function(){
+				castapp.getCurrentPosition({
+					succFn:function(data){
+						alert(data);
+					},
+					errFn:function(error){
+						alert(error);
+					}
+				});
+			});
+			
+	</script>
+	</body>
+</html>

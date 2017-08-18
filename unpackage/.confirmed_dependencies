@@ -1,0 +1,106 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/castapp.js",
+			"sy.html",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf",
+			"css/style.css"
+		],
+		"refer": [
+			"sd.html",
+			"sy.html",
+			"wd.html",
+			"sq.html",
+			"yf.html"
+		]
+	},
+	"wd.html": {
+		"resources": [
+			"css/style.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/castapp.js",
+			"img/user/5.jpg",
+			"css/wd.css",
+			"js/mui.zoom.js",
+			"css/image.viewer.css",
+			"fonts/mui.ttf",
+			"js/mui.previewimage.js",
+			"img/user/4.jpg"
+		],
+		"refer": []
+	},
+	"sy.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"fonts/mui.ttf",
+			"js/castapp.js",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf",
+			"img/1.jpg",
+			"img/2.jpg",
+			"img/4.jpg",
+			"img/3.jpg",
+			"img/banner/banner2.jpg",
+			"js/mui.zoom.js",
+			"img/user/7.jpg",
+			"img/banner/banner4.jpg",
+			"css/image.viewer.css",
+			"img/banner/banner1.jpg",
+			"img/user/6.jpg",
+			"js/mui.previewimage.js",
+			"img/banner/banner3.jpg",
+			"img/user/4.jpg",
+			"img/user/1.jpg",
+			"img/user/2-1.jpg",
+			"img/user/5.jpg",
+			"img/user/3-1.jpg"
+		],
+		"refer": [
+			"ms.html"
+		]
+	},
+	"sq.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"img/user/2-1.jpg",
+			"img/user/1.jpg",
+			"img/user/3-1.jpg"
+		],
+		"refer": []
+	},
+	"sd.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"fonts/mui.ttf",
+			"js/castapp.js",
+			"img/1.jpg"
+		],
+		"refer": []
+	},
+	"ms.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"css/style.css"
+		],
+		"refer": []
+	},
+	"yf.html": {
+		"resources": [
+			"css/yuanfen.css",
+			"img/user/4.jpg"
+		]
+	}
+}

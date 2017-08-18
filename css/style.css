@@ -1,0 +1,77 @@
+.public-color{
+	background:red;
+}
+.public-color h1,.public-color a{
+	color: #fff;
+}
+/*mtab*/
+/*颜色*/
+.mui-bar-tab .mui-tab-item.mui-active{
+	color:red;
+}
+/*首页*/
+.box{
+	background: #fff;
+	overflow: hidden;
+}
+.box-a{
+	width: 33.33%;
+	text-align: center;
+	padding: 2px 0px;
+	float: left;
+	border-right: 3px solid #f0f0f0;
+	border-bottom: 3px solid #f0f0f0;
+}
+.box-a span{
+	font-size: 30px;
+}
+.box-a p span{
+	font-size: 12px;
+	padding-right: 4px;
+}
+.box-a p{
+	margin: 0px;
+	color: #000;
+	font-size: 13px;
+	margin-top: 2px;
+}
+.tu-yi{
+	color:#FF3300;
+}
+.tu-er{
+	color:#FF0066;
+
+}
+.tu-san{
+	color:#66FF66;
+}
+.tu-si{
+	color:#0033CC;
+}
+.tu-wu{
+	color:#993366;
+}
+.tu-liu{
+	color:#9900FF;
+}
+.tu-qi{
+	color:#009933;
+}
+.tu-ba{
+	color:pink;
+}
+.tu-jiu{
+	color:orange;
+}
+/*列表*/
+.box-b{
+	margin-top:10px;
+}
+.border-img{
+	border-radius: 100%;
+}
+/*设置轮播图片大小*/
+.mui-slider .mui-slider-group .mui-slider-item .img-img{
+	width: 370px;
+	height: 220px;
+}

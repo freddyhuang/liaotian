@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*修改mui样式*/
+.mui-segmented-control.mui-scroll-wrapper{
+	height: 100px;
+}
+
+
+
+
+ .mui-segmented-control.mui-scroll-wrapper .user-img-more .mui-control-item{
+ 	padding: 1px;
+ }
+.user-img-more .user-II-more{
+	width: 80px;
+	height: 80px;
+	margin-right: 3px;
+	border-radius: 3px;
+	float: right;
+}
+
+.input-img{
+	background: none;
+	border: 1px  solid  #504747;
+	width:72px;
+	height: 72px;
+	color: #fff;
+}
+.input-img-more{
+	width: 72px;
+	height: 72px;
+	background: rgba(0,0,0,0.5);
+	bottom: 15px;
+	right: 5px;
+	position: absolute;
+	z-index: 9999999999;
+}
+.mui-segmented-control.mui-scroll-wrapper .mui-control-item{
+	padding: 0px;
+	border: none !important;
+}
+
+.mui-table-view .mui-table-cell .mui-navigate-right span{
+	font-size: 12px;
+}
