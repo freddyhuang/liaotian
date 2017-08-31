@@ -57,7 +57,28 @@
 		var users = JSON.parse(localStorage.getItem('$users') || '[]');
 		users.push(regInfo);
 		localStorage.setItem('$users', JSON.stringify(users));
-		return callback();
+		
+		mui.ajax('http://server-name/login.php',{
+			data:{
+				username:regInfo.account,
+				password:regInfo.password,
+				sex:regInfo.sex
+			},
+			dataType:'json',//服务器返回json格式数据
+			type:'post',//HTTP请求类型
+			timeout:10000,//超时时间设置为10秒；
+			headers:{'Content-Type':'application/json'},	              
+			success:function(data){
+				//服务器返回响应，根据响应结果；
+				console.log(data)
+				
+				return callback();
+			},
+			error:function(xhr,type,errorThrown){
+				//异常处理；
+				console.log(type);
+			}
+		});
 	};
 
 	/**

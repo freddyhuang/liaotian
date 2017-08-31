@@ -39,7 +39,6 @@ function removeClass(obj,cName) {
 
 var  aSex= document.getElementsByClassName("sex")[0]; //获取类名
 var nowMenu = aSex.getElementsByTagName('p');
-console.log(nowMenu.length)
 for(var i=0; i<nowMenu.length; i++){
     nowMenu[i].index = i;  //设置下标值
     nowMenu[i].onclick = function(){

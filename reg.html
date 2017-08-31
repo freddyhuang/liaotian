@@ -82,12 +82,14 @@
 					var accountBox = doc.getElementById('account');
 					var passwordBox = doc.getElementById('password');
 					var passwordConfirmBox = doc.getElementById('password_confirm');
-					var emailBox = doc.getElementById('email');
+					var sexBox = doc.getElementsByClassName('select')[0]
+					//var emailBox = doc.getElementById('email');
 					regButton.addEventListener('tap', function(event) {
 						var regInfo = {
 							account: accountBox.value,
 							password: passwordBox.value,
-							email: emailBox.value
+							sex:sexBox.value
+							//email: emailBox.value
 						};
 						var passwordConfirm = passwordConfirmBox.value;
 						if (passwordConfirm != regInfo.password) {
@@ -121,8 +123,8 @@
 				});
 			}(mui, document));
 		</script>
-		<script src="js/reg.js"></script>
 		<script type="text/javascript" src="js/castapp.js" ></script>
+		<script src="js/reg.js"></script>
 	</body>
 
 </html>
