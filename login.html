@@ -135,8 +135,8 @@
 					var settings = app.getSettings();
 					var state = app.getState();
 					var mainPage = $.preload({
-						"id": 'main',
-						"url": 'main.html'
+						"id": 'index',
+						"url": 'index.html'
 					});
 					var main_loaded_flag = false;
 					mainPage.addEventListener("loaded",function () {
@@ -228,6 +228,8 @@
 					var autoLoginButton = doc.getElementById("autoLogin");
 					var regButton = doc.getElementById('reg');
 					var forgetButton = doc.getElementById('forgetPassword');
+					
+					//点击 登录 按钮
 					loginButton.addEventListener('tap', function(event) {
 						var loginInfo = {
 							account: accountBox.value,
@@ -241,6 +243,7 @@
 							toMain();
 						});
 					});
+					
 					$.enterfocus('#login-form input', function() {
 						$.trigger(loginButton, 'tap');
 					});
@@ -252,6 +255,8 @@
 //							app.setSettings(settings);
 //						}, 50);
 //					}, false);
+
+					//点击注册跳转注册页面
 					regButton.addEventListener('tap', function(event) {
 						$.openWindow({
 							url: 'reg.html',
@@ -268,6 +273,7 @@
 							}
 						});
 					}, false);
+					//点击忘记密码跳转找回密码页面
 					forgetButton.addEventListener('tap', function(event) {
 						$.openWindow({
 							url: 'forget_password.html',

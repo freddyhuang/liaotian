@@ -12,11 +12,11 @@
 		loginInfo = loginInfo || {};
 		loginInfo.account = loginInfo.account || '';
 		loginInfo.password = loginInfo.password || '';
-		if (loginInfo.account.length < 5) {
-			return callback('账号最短为 5 个字符');
+		if (loginInfo.account.length < 3) {
+			return callback('账号最短为 3 个字符');
 		}
-		if (loginInfo.password.length < 6) {
-			return callback('密码最短为 6 个字符');
+		if (loginInfo.password.length < 3) {
+			return callback('密码最短为 3 个字符');
 		}
 		var users = JSON.parse(localStorage.getItem('$users') || '[]');
 		var authed = users.some(function(user) {
@@ -45,40 +45,61 @@
 		regInfo = regInfo || {};
 		regInfo.account = regInfo.account || '';
 		regInfo.password = regInfo.password || '';
-		if (regInfo.account.length < 5) {
-			return callback('用户名最短需要 5 个字符');
+		if (regInfo.account.length < 3) {
+			return callback('用户名最短需要 3 个字符');
 		}
-		if (regInfo.password.length < 6) {
-			return callback('密码最短需要 6 个字符');
+		if (regInfo.password.length < 3) {
+			return callback('密码最短需要 3 个字符');
 		}
-		if (!checkEmail(regInfo.email)) {
-			return callback('邮箱地址不合法');
-		}
+//		if (!checkEmail(regInfo.email)) {
+//			return callback('邮箱地址不合法');
+//		}
 		var users = JSON.parse(localStorage.getItem('$users') || '[]');
 		users.push(regInfo);
 		localStorage.setItem('$users', JSON.stringify(users));
 		
-		mui.ajax('http://server-name/login.php',{
+		
+		mui.ajax(apiUrl+'/api/user/register',{
 			data:{
 				username:regInfo.account,
 				password:regInfo.password,
+				repassword:regInfo.repassword,
 				sex:regInfo.sex
 			},
 			dataType:'json',//服务器返回json格式数据
 			type:'post',//HTTP请求类型
-			timeout:10000,//超时时间设置为10秒；
+			//timeout:10000,//超时时间设置为10秒；
 			headers:{'Content-Type':'application/json'},	              
 			success:function(data){
 				//服务器返回响应，根据响应结果；
 				console.log(data)
-				
-				return callback();
+				console.log(data.code)
+				console.log(data.message)
+				var code = data.code;
+				var message = data.message;
+				switch (code){
+					case 0:
+						return callback();
+						break;
+					case 1:
+					case 2:
+					case 3:
+					case 4:
+						$.toast(message);
+						break;
+					default:
+						break;
+				}
 			},
 			error:function(xhr,type,errorThrown){
 				//异常处理；
 				console.log(type);
+				console.log(xhr);
+				console.log(errorThrown);
 			}
 		});
+		
+		
 	};
 
 	/**

@@ -318,7 +318,8 @@
 				],
 				"refer": [
 					"forget_password.html",
-					"reg.html"
+					"reg.html",
+					"index.html"
 				],
 				"priority": 0
 			},
@@ -328,7 +329,11 @@
 					"js/app.js",
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"css/style.css"
+					"css/style.css",
+					"js/castapp.js",
+					"css/reg.css",
+					"js/reg.js",
+					"js/base.js"
 				],
 				"refer": [],
 				"priority": 0
