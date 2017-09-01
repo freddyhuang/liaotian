@@ -1,0 +1,11 @@
+.public-color{
+	background:hotpink;
+}
+.public-color h1,.public-color a{
+	color: #fff;
+}
+/*mtab*/
+/*颜色*/
+.mui-bar-tab .mui-tab-item.mui-active{
+	color:red;
+}

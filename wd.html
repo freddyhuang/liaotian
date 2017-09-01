@@ -44,7 +44,7 @@
 		<!--<div class="mui-content">
 		    商店
 		</div>-->
-		<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+		<div id="offCanvasWrapper" class="mui-off-canvas-wrap">
 			<!--侧滑菜单部分-->
 			<aside id="offCanvasSide" class="mui-off-canvas-left">
 				<div id="offCanvasSideScroll" class="mui-scroll-wrapper">
@@ -90,17 +90,25 @@
 				</div>
 			</aside>
 			<!--主界面部分-->
-			<div class="mui-inner-wrap">
-				<header class="mui-bar mui-bar-nav public-color">
+			
+				<!--<header class="mui-bar mui-bar-nav public-color">
 					<a href="#" class="mui-icon mui-pull-left centet">
 						<img class="min-img" src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=a52f8c93211f95cab9f595b6f9167fc5/83025aafa40f4bfbc9c817b9074f78f0f63618c6.jpg"  id="img">
 					</a>
 					<h1 class="mui-title">我的</h1>
-				</header>
-				<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+				</header>-->
+				<div class="heading">
+					<div class="HeadPortrait">
+						<img src="images/user-photo.png" width="80px" height="80px" class="headPortraitImg" />
+						<p>聊友8340</p>
+						<p>ID:8645</p>
+					</div>
+					<div class="mui-navigate-right"></div>
+				</div>
+				<div  class="mui-content">
 							<!--这里放置真实显示的DOM内容-->
 							<div class="mui-content">
-								<div class="user-img-o mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+								<!--<div class="user-img-o mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
 									<div class="mui-scroll mui-content-padded user-img-more" id="user-img-more">
 								        <a class="mui-control-item">
 								           <img class="user-II-more"  src="img/user/4.jpg" data-preview-src="" data-preview-group="1" />
@@ -123,12 +131,29 @@
 								          	<button class="input-img" id="input-img">+</button>
 								        </a>
 								    </div>
+								</div>-->
+								<!--
+                                	用户的标志
+                                -->
+								<div class="usergin">
+									<div class="userginL">
+										<div class="userginNum">550</div>
+										<div class="userginTxt">总经验</div>
+									</div>
+									<div class="userginC">
+										<img src="img/vip_icon_n.png" width="23px" height="23px" />
+										<div class="userginCTxt">还不是VIP</div>
+									</div>
+									<div class="userginR">
+										<div class="userginNum">2</div>
+										<div class="userginTxt">粉丝</div>
+									</div>
 								</div>
 								
 							    <ul class="mui-table-view">
-						            <li class="mui-table-view-cell">
+						            <li class="mui-table-view-cell" id="minePhoto">
 						                <a class="mui-navigate-right">
-						                   	<span class="mui-icon mui-icon-email"></span>   我的资料
+						                   	<span class="mui-icon mui-icon-email"></span>   我的相册
 						                </a>
 						            </li>
 						            <li class="mui-table-view-cell">
@@ -150,7 +175,7 @@
 							            </li>
 							            <li class="mui-table-view-cell">
 							                <a class="mui-navigate-right">
-							                    <span class="mui-icon mui-icon-locked"></span>   找回密码
+							                    <span class="mui-icon mui-icon-locked"></span>   重置密码
 							                </a>
 							            </li>
 							            <li class="mui-table-view-cell">
@@ -158,20 +183,20 @@
 							                    <span class="mui-icon mui-icon-compose"></span>   意见反馈
 							                </a>
 							            </li>
-							             <li class="mui-table-view-cell">
+							            <li class="mui-table-view-cell" id="agreement">
 							                <a class="mui-navigate-right">
 							                    <span class="mui-icon mui-icon-eye"></span>   使用（本软件）协议
 							                </a>
 							            </li>
-							            <li class="mui-table-view-cell">
-							                <a href="models/login/login.html" class="mui-navigate-right">
+							            <li class="mui-table-view-cell loginOut">
+							                <a  class="mui-navigate-right">
 							                    <span class="mui-icon mui-icon-arrowthinleft"></span>   退出登录
 							                </a>
 							            </li>
 							       </ul>
 							</div>
 					</div>
-			</div>
+		
 		</div>
 		
 		<script type="text/javascript" src="js/castapp.js" ></script>
@@ -183,6 +208,31 @@
 				deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
 			});
 			ca.init();
+			//点击 进入我的相册
+			var minePhoto = ca.id('minePhoto');
+			ca.click(minePhoto,function(){
+				ca.newInterface({
+					url:"./models/minePhoto.html",
+					id:"minePhoto",
+				})
+			})
+			//点击 进入本软件的协议
+			var agreement = ca.id('agreement');
+			ca.click(agreement,function(){
+				ca.newInterface({
+					url:"./models/agreement/agreement.html",
+					id:"agreement",
+				})
+			})
+			//点击退出登录
+			var loginOut=ca.className('loginOut');
+			ca.click(loginOut[0],function(){
+				ca.newInterface({
+					url:'login.html',
+					id:'login',
+				})
+			})
+			
 			//预览图片
 			ca.imageViewer();
 			
@@ -231,12 +281,12 @@
 			
 			//选择上传更多图片end
 			
-			var kai = ['img'];
-			var guan = ['c1'];
+//			var kai = ['img'];
+//			var guan = ['c1'];
 			
 			// 3种滑动方式 main-move 主界面移动 menu-move 菜单移动  main-move-scalable 仿QQ聊天缩放
 			
-			ca.sideslipNav(' main-move',kai,guan);	
+			//ca.sideslipNav(' main-move',kai,guan);	
 			
 			
 			/*

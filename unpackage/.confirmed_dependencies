@@ -30,9 +30,15 @@
 			"css/image.viewer.css",
 			"fonts/mui.ttf",
 			"js/mui.previewimage.js",
-			"img/user/4.jpg"
+			"img/user/4.jpg",
+			"img/vip_icon_n.png",
+			"images/user-photo.png"
 		],
-		"refer": []
+		"refer": [
+			"login.html",
+			"models/agreement/agreement.html",
+			"models/minePhoto.html"
+		]
 	},
 	"sy.html": {
 		"resources": [
@@ -132,6 +138,11 @@
 			"css/reg.css",
 			"js/reg.js",
 			"js/base.js"
+		]
+	},
+	"models/agreement/agreement.html": {
+		"resources": [
+			"css/public.css"
 		]
 	}
 }
